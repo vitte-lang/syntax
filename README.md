@@ -1,21 +1,67 @@
-Référer à ChatGPT : 
-Coder en Vitte la syntaxe contenu dans le EBNF se trouve à l'adresse
-https://github.com/vitte-lang/syntax/
-ou pour plus de précision 
-https://github.com/vitte-lang/syntax/vitte.ebnf
-Préciser que vitte possède des modules: 
-https://github.com/vitte-lang/syntax/package1.txt c'est une liste qui comprend chaque modules et ses tests listes exhaustive
-La machine enregistre le langage
-Voici un code en vit
+# Vitte — Implémentation conforme à la grammaire officielle
 
-space demo/hello
+## Objectif
 
-proc main gives i32
-    emit "Hello, Vitte"
+Implémenter en **Vitte (.vit)** la syntaxe définie dans la grammaire EBNF officielle disponible dans le dépôt :
+
+- https://github.com/vitte-lang/syntax/
+- https://github.com/vitte-lang/syntax/blob/main/vitte.ebnf
+
+Le fichier `vitte.ebnf` constitue la **référence canonique** du langage.  
+Toute implémentation doit respecter strictement cette spécification.
+
+---
+
+## Système de modules
+
+Vitte dispose d’un système modulaire structuré.
+
+La liste exhaustive des modules ainsi que leurs tests associés est disponible ici :
+
+- https://github.com/vitte-lang/syntax/blob/main/package1.txt
+
+Ce fichier contient :
+
+- La liste complète des modules
+- Les sous-modules
+- Les tests unitaires associés
+- Les dépendances internes
+
+L’environnement doit :
+
+- Enregistrer automatiquement le langage
+- Reconnaître les modules
+- Charger correctement les dépendances
+- Supporter les tests par module
+
+---
+
+## Spécifications techniques attendues
+
+L’implémentation doit :
+
+1. Respecter strictement la grammaire `vitte.ebnf`
+2. Générer du code valide `.vit`
+3. Supporter les blocs `space`, `proc`, `entry`
+4. Gérer correctement les instructions `emit` et `give`
+5. Intégrer le système modulaire décrit dans `package1.txt`
+6. Permettre la compilation et l’exécution du code généré
+
+---
+
+## Exemple minimal valide en Vitte
+
+```vit
+space demo/var
+
+proc main() -> i32
+{
+    let x: i32 = 10
+    emit x
     give 0
-.end
+}
 
-entry at demo/hello
-    make code = main
-    give code
-.end
+entry at demo/var
+{
+    give main()
+}
