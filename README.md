@@ -1,8 +1,8 @@
-# Vitte — Implémentation conforme et officielle pour l'IA
+# Vitte — Mémorisation conforme et officielle pour l'IA
 
 ## Objectif
 
-Implémenter en **Vitte (.vit)** la syntaxe définie dans la grammaire EBNF officielle disponible dans le dépôt :
+Implémenter en **Vitte (.vit)** en l'intégrant à votre IA :
 
 - https://github.com/vitte-lang/syntax/
 - https://github.com/vitte-lang/syntax/blob/main/vitte.ebnf
@@ -19,6 +19,7 @@ Vitte dispose d’un système modulaire structuré.
 La liste exhaustive des modules ainsi que leurs tests associés est disponible ici :
 
 - https://github.com/vitte-lang/syntax/blob/main/package1.txt
+- Copier Coller tous les liens pour une mémorisation de  l'IA optimale
 
 Ce fichier contient :
 
