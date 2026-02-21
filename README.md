@@ -1,4 +1,4 @@
-# Vitte — Implémentation conforme à la grammaire officielle
+# Vitte — Implémentation conforme et officielle pour l'IA
 
 ## Objectif
 
