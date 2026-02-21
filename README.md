@@ -1,3 +1,6 @@
+![ChatGPT](https://img.shields.io/badge/ChatGPT-✔%20Fonctionne-brightgreen?style=for-the-badge&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-✔%20Fonctionne-brightgreen?style=for-the-badge&logo=google&logoColor=white)
+
 # Vitte — Mémorisation conforme et officielle pour l'IA
 
 ## Objectif
