@@ -1,0 +1,1447 @@
+<<<
+index.vit
+package vitte/index
+>>>
+
+space vitte/index
+
+form PackageIndexEntry {
+    name: string
+    tag: string
+    deps: [string]
+    role: string
+    boundary: string
+}
+
+proc package_index() -> [PackageIndexEntry] {
+    give [
+        PackageIndexEntry(
+            "abi",
+            "vitte/abi",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Contrat ABI: conventions d appel et frontiere binaire",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "actor",
+            "vitte/actor",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Modele acteur supervision et isolation des etats",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "alerts",
+            "vitte/alerts",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Alerting operationnel par regles explicites",
+            "Ne notifie pas les canaux externes; expose seulement la decision d alerte"
+        )
+        ,
+        PackageIndexEntry(
+            "alloc",
+            "vitte/alloc",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Allocation memoire generique: global allocator, arena et fallback",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "array",
+            "vitte/array",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Tableaux N dimensions, slicing et operations vectorielles",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "ast",
+            "vitte/ast",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Representation syntaxique source avant resolution semantique",
+            "Ne fait ni IO reseau ni decisions metier applicatives"
+        )
+        ,
+        PackageIndexEntry(
+            "async",
+            "vitte/async",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Modele async: taches, ordonnancement et polling non bloquant",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "audio",
+            "vitte/audio",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Traitement audio basique, flux et transformations",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "audit",
+            "vitte/audit",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Journal d actions immuable orientee conformite",
+            "Ne decide pas l autorisation; conserve et verifie seulement la preuve d action"
+        )
+        ,
+        PackageIndexEntry(
+            "auth",
+            "vitte/auth",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Authentification autorisation et gestion des roles",
+            "Ne choisit pas la politique metier; expose seulement la surface technique"
+        )
+        ,
+        PackageIndexEntry(
+            "bench",
+            "vitte/bench",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Mesure performance et bench reproductibles",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "borrow",
+            "vitte/borrow",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Regles ownership emprunt et securite des references",
+            "Ne fait ni IO reseau ni decisions metier applicatives"
+        )
+        ,
+        PackageIndexEntry(
+            "bulkhead",
+            "vitte/bulkhead",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Isole les pools de charge pour limiter la cascade",
+            "Ne remplace pas retry timeout; protege seulement la capacite locale"
+        )
+        ,
+        PackageIndexEntry(
+            "cache",
+            "vitte/cache",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Cache memoire avec politique eviction et TTL",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "channel",
+            "vitte/channel",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Communication concurrente via canaux et files",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "circuit_breaker",
+            "vitte/circuit_breaker",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Protection anti cascade en cas de pannes repetees",
+            "Ne remplace pas retry ni timeout; controle uniquement l ouverture du circuit"
+        )
+        ,
+        PackageIndexEntry(
+            "cli",
+            "vitte/cli",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Parsing ligne de commande et UX terminal",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "codec",
+            "vitte/codec",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Encodage et decodage payload json msgpack binaire",
+            "Ne valide pas les schemas metier; applique seulement le codec"
+        )
+        ,
+        PackageIndexEntry(
+            "codegen",
+            "vitte/codegen",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Orchestration generation de code multi-backend",
+            "Ne fait pas d optimisation metier implicite"
+        )
+        ,
+        PackageIndexEntry(
+            "collections",
+            "vitte/collections",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Collections generalistes pour sequences, tables, ensembles et file circulaire",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "config",
+            "vitte/config",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Chargement fusion et validation configuration",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "config_derive",
+            "vitte/config_derive",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Generation automatique de configuration typee",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "const_eval",
+            "vitte/const_eval",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Evaluation compile time des expressions constantes",
+            "Ne fait ni IO reseau ni decisions metier applicatives"
+        )
+        ,
+        PackageIndexEntry(
+            "contracts",
+            "vitte/contracts",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Validation de contrats API DB modules",
+            "Ne genere pas les schemas; verifie et compare seulement les contrats fournis"
+        )
+        ,
+        PackageIndexEntry(
+            "core",
+            "vitte/core",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Noyau des types primitifs, Option Result et conventions du langage",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "crypto",
+            "vitte/crypto",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Primitives cryptographiques hash et signatures",
+            "Ne choisit pas la politique metier; expose seulement la surface technique"
+        )
+        ,
+        PackageIndexEntry(
+            "datetime",
+            "vitte/datetime",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Manipulation date heure duree et fuseaux",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "db",
+            "vitte/db",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Abstraction base de donnees et sessions",
+            "Ne contient pas les regles metier de l application"
+        )
+        ,
+        PackageIndexEntry(
+            "doc",
+            "vitte/doc",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Generation documentation et index de recherche",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "ecs",
+            "vitte/ecs",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Entity Component System pour simulation et jeux",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "env",
+            "vitte/env",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Acces environnement execution et variables",
+            "Ne masque pas les erreurs OS; les remonte explicitement"
+        )
+        ,
+        PackageIndexEntry(
+            "eval",
+            "vitte/eval",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Evaluation dynamique controlee et execution sandbox",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "feature_flags",
+            "vitte/feature_flags",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Activation progressive et controlee des fonctionnalites",
+            "Ne stocke pas la configuration distante; evalue seulement les regles locales"
+        )
+        ,
+        PackageIndexEntry(
+            "ffi",
+            "vitte/ffi",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Pont fonctions natives et signatures",
+            "N execute pas de code natif directement"
+        )
+        ,
+        PackageIndexEntry(
+            "fixtures",
+            "vitte/fixtures",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Jeux de donnees de test reproductibles",
+            "Ne gere pas la persistance externe; manipule seulement un set en memoire"
+        )
+        ,
+        PackageIndexEntry(
+            "fs",
+            "vitte/fs",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Utilitaires chemins et operations fichiers",
+            "Pas d I/O disque dans ces helpers purs"
+        )
+        ,
+        PackageIndexEntry(
+            "graph",
+            "vitte/graph",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Structures graphes et algorithmes de parcours",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "gui",
+            "vitte/gui",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Couche interface graphique et projection UI",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "hash",
+            "vitte/hash",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Fonctions de hachage non cryptographiques et utilitaires",
+            "Ne choisit pas la politique metier; expose seulement la surface technique"
+        )
+        ,
+        PackageIndexEntry(
+            "health",
+            "vitte/health",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Endpoints live ready startup pour orchestration production",
+            "Ne repare pas les dependances; expose uniquement leur etat agrege"
+        )
+        ,
+        PackageIndexEntry(
+            "hir",
+            "vitte/hir",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Representation HIR semantique pour analyses statiques",
+            "Ne fait ni IO reseau ni decisions metier applicatives"
+        )
+        ,
+        PackageIndexEntry(
+            "http",
+            "vitte/http",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Composants HTTP serveur, routage et mapping statut",
+            "Ne choisit pas la politique metier; expose seulement la surface technique"
+        )
+        ,
+        PackageIndexEntry(
+            "http_client",
+            "vitte/http_client",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Client HTTP avec gestion requete reponse",
+            "Ne choisit pas la politique metier; expose seulement la surface technique"
+        )
+        ,
+        PackageIndexEntry(
+            "idempotency",
+            "vitte/idempotency",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Stabilise les retries metier par cle idempotente",
+            "Ne contient pas le transport HTTP; gere uniquement la memorisation metier"
+        )
+        ,
+        PackageIndexEntry(
+            "image",
+            "vitte/image",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Representation image, transformation et export simple",
+            "Ne gere pas I/O reseau directement; opere sur donnees deja chargees"
+        )
+        ,
+        PackageIndexEntry(
+            "indexmap",
+            "vitte/indexmap",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Dictionnaire stable avec ordre d insertion",
+            "N implemente pas persistance; structure en memoire seulement"
+        )
+        ,
+        PackageIndexEntry(
+            "io",
+            "vitte/io",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Entrees sorties texte et binaire avec buffers",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "jobs",
+            "vitte/jobs",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "File de jobs robuste avec reprise et dead letter",
+            "Ne remplace pas l orchestrateur externe; gere seulement le cycle de traitement"
+        )
+        ,
+        PackageIndexEntry(
+            "jsonpath",
+            "vitte/jsonpath",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Navigation de donnees JSON par chemins textuels",
+            "Ne parse pas tout JSON; ne fait que la resolution de chemins"
+        )
+        ,
+        PackageIndexEntry(
+            "jwt",
+            "vitte/jwt",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Tokens JWT: emission, verification et claims",
+            "Ne choisit pas la politique metier; expose seulement la surface technique"
+        )
+        ,
+        PackageIndexEntry(
+            "kernel-abi",
+            "vitte/kernel/abi",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Role non documente",
+            "Boundary non documentee"
+        )
+        ,
+        PackageIndexEntry(
+            "kv",
+            "vitte/kv",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Store local key value avec TTL et scan prefixe",
+            "Ne replique pas ni ne persiste disque; gere uniquement un store local"
+        )
+        ,
+        PackageIndexEntry(
+            "lint",
+            "vitte/lint",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Regles qualite style et diagnostics de code",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "log",
+            "vitte/log",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Journalisation structuree et niveaux severite",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "lru",
+            "vitte/lru",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Politique eviction least recently used",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "lsp",
+            "vitte/lsp",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Indexation source diagnostics et quick-fix editor",
+            "Ne compile pas le programme; fournit seulement signaux IDE"
+        )
+        ,
+        PackageIndexEntry(
+            "macros",
+            "vitte/macros",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Expansion et gestion de macros textuelles",
+            "N interprete pas le langage complet; expansion ciblee seulement"
+        )
+        ,
+        PackageIndexEntry(
+            "math",
+            "vitte/math",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Operations mathematiques utilitaires deterministes",
+            "Pas d approximation flottante implicite"
+        )
+        ,
+        PackageIndexEntry(
+            "migrate",
+            "vitte/migrate",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Orchestration des migrations schema/donnees",
+            "N execute pas SQL directement; prepare et valide le plan"
+        )
+        ,
+        PackageIndexEntry(
+            "mir",
+            "vitte/mir",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Representation MIR orientee transformations et generation",
+            "Ne fait ni IO reseau ni decisions metier applicatives"
+        )
+        ,
+        PackageIndexEntry(
+            "ml",
+            "vitte/ml",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Briques machine learning didactiques et predictives",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "mock_http",
+            "vitte/mock_http",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Mock d API externes pour tests deterministes",
+            "Ne fait pas de transport HTTP reel; sert uniquement de simulateur local"
+        )
+        ,
+        PackageIndexEntry(
+            "monomorphize",
+            "vitte/monomorphize",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Specialisation generiques vers representations concretes",
+            "Ne fait ni IO reseau ni decisions metier applicatives"
+        )
+        ,
+        PackageIndexEntry(
+            "net",
+            "vitte/net",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Abstractions reseau: transport, sockets et flux de communication",
+            "Ne choisit pas la politique metier; expose seulement la surface technique"
+        )
+        ,
+        PackageIndexEntry(
+            "observability",
+            "vitte/observability",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Correlation logs metrics et traces",
+            "Ne contient pas la logique metier; expose seulement instrumentation et trace"
+        )
+        ,
+        PackageIndexEntry(
+            "openapi",
+            "vitte/openapi",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Generation specification OpenAPI contract-first",
+            "Ne sert pas le trafic HTTP; produit uniquement le contrat API"
+        )
+        ,
+        PackageIndexEntry(
+            "orm",
+            "vitte/orm",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Mapping objets vers schemas relationnels",
+            "Ne contient pas les regles metier de l application"
+        )
+        ,
+        PackageIndexEntry(
+            "outbox",
+            "vitte/outbox",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Fiabilise le flux DB vers events",
+            "Ne publie pas sur le transport reseau; gere uniquement la file outbox"
+        )
+        ,
+        PackageIndexEntry(
+            "pack",
+            "vitte/pack",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Manifest package, dependances et versionning",
+            "N effectue pas telechargement reseau; gestion metadonnees seulement"
+        )
+        ,
+        PackageIndexEntry(
+            "pagination",
+            "vitte/pagination",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Pagination stable API DB",
+            "Ne fait pas la requete DB; calcule seulement la projection de pagination"
+        )
+        ,
+        PackageIndexEntry(
+            "pathlib",
+            "vitte/pathlib",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Operations chemins de fichiers robustes",
+            "Ne masque pas les erreurs OS; les remonte explicitement"
+        )
+        ,
+        PackageIndexEntry(
+            "pickle",
+            "vitte/pickle",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Encodage/decodage compact de paires cle-valeur",
+            "Pas de crypto ni compression; serialisation legere uniquement"
+        )
+        ,
+        PackageIndexEntry(
+            "plot",
+            "vitte/plot",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Primitives de visualisation de series numeriques",
+            "Ne rend pas UI directe"
+        )
+        ,
+        PackageIndexEntry(
+            "plugin",
+            "vitte/plugin",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Chargement de plugins et extension dynamique",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "policy",
+            "vitte/policy",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "RBAC ABAC centralise et explicable",
+            "Ne fait pas d authentification; applique uniquement les regles d autorisation"
+        )
+        ,
+        PackageIndexEntry(
+            "process",
+            "vitte/process",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Gestion processus: lancement, supervision et fin de cycle",
+            "Ne masque pas les erreurs OS; les remonte explicitement"
+        )
+        ,
+        PackageIndexEntry(
+            "queue",
+            "vitte/queue",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "File de traitement avec ack nack et dead letter",
+            "Ne fait pas de transport externe; orchestre uniquement le cycle local de queue"
+        )
+        ,
+        PackageIndexEntry(
+            "random_secure",
+            "vitte/random_secure",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Generation pseudo-aleatoire a usage securise applique",
+            "Pas de promesse crypto forte sans source systeme"
+        )
+        ,
+        PackageIndexEntry(
+            "rate_limit",
+            "vitte/rate_limit",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Protection API via fenetre de limitation deterministe",
+            "Ne fait pas d auth ni de metier; applique uniquement la politique de debit"
+        )
+        ,
+        PackageIndexEntry(
+            "reflect",
+            "vitte/reflect",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Introspection metadonnees de types",
+            "Ne modifie pas les types runtime"
+        )
+        ,
+        PackageIndexEntry(
+            "registry",
+            "vitte/registry",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Publication recuperation et index des packages",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "requests",
+            "vitte/requests",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "API haut niveau pour appels HTTP usuels",
+            "Ne choisit pas la politique metier; expose seulement la surface technique"
+        )
+        ,
+        PackageIndexEntry(
+            "retry",
+            "vitte/retry",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Retries robustes avec backoff et jitter",
+            "Ne masque pas les erreurs metier; orchestre uniquement la reprise"
+        )
+        ,
+        PackageIndexEntry(
+            "rope",
+            "vitte/rope",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Manipulation efficace de chaines segmentees",
+            "N effectue pas d I/O, uniquement structures texte"
+        )
+        ,
+        PackageIndexEntry(
+            "runtime",
+            "vitte/runtime",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Configuration execution et cycles runtime",
+            "Ne remplace pas scheduler/IO bas niveau"
+        )
+        ,
+        PackageIndexEntry(
+            "saga",
+            "vitte/saga",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Orchestration de transactions distribuees",
+            "Ne transporte pas les messages externes; orchestre seulement les transitions de saga"
+        )
+        ,
+        PackageIndexEntry(
+            "scheduler",
+            "vitte/scheduler",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Planification taches periodiques et declencheurs",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "schema_registry",
+            "vitte/schema_registry",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Versionne et compare les schemas payload",
+            "Ne valide pas le payload runtime; gere uniquement le registre de schemas"
+        )
+        ,
+        PackageIndexEntry(
+            "search",
+            "vitte/search",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Index texte et requetes simples",
+            "Ne remplace pas un moteur full-text externe; fournit une base locale"
+        )
+        ,
+        PackageIndexEntry(
+            "secrets",
+            "vitte/secrets",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Gestion des secrets hors code source",
+            "Ne fait pas de crypto avancee; orchestre seulement la resolution des secrets"
+        )
+        ,
+        PackageIndexEntry(
+            "serialize",
+            "vitte/serialize",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Serialisation des donnees vers formats stables",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "shell",
+            "vitte/shell",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Construction de commandes shell securisees",
+            "Ne lance pas les process directement"
+        )
+        ,
+        PackageIndexEntry(
+            "slab",
+            "vitte/slab",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Allocation d emplacements indexes en memoire",
+            "Pas de persistence disque"
+        )
+        ,
+        PackageIndexEntry(
+            "slo",
+            "vitte/slo",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Suivi SLI SLO et budget d erreur",
+            "Ne collecte pas les metriques externes; calcule uniquement l etat SLO"
+        )
+        ,
+        PackageIndexEntry(
+            "sql",
+            "vitte/sql",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Acces SQL type et execution de requetes",
+            "Ne contient pas les regles metier de l application"
+        )
+        ,
+        PackageIndexEntry(
+            "stats",
+            "vitte/stats",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Calcul statistique descriptif et modeles simples",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+        ,
+        PackageIndexEntry(
+            "std",
+            "vitte/std",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Index des modules standards disponibles",
+            "Ne charge pas dynamiquement les modules"
+        )
+        ,
+        PackageIndexEntry(
+            "stream",
+            "vitte/stream",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Flux avec batch fenetre temporelle et backpressure",
+            "Ne transporte pas les flux reseau; gere seulement le buffer local"
+        )
+        ,
+        PackageIndexEntry(
+            "subprocess",
+            "vitte/subprocess",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Specification de processus externes",
+            "N orchestre pas scheduling global"
+        )
+        ,
+        PackageIndexEntry(
+            "template",
+            "vitte/template",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Rendu de templates textuels",
+            "Pas de logique metier cachee dans le moteur"
+        )
+        ,
+        PackageIndexEntry(
+            "tenant",
+            "vitte/tenant",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Isolation multi tenant explicite",
+            "Ne fait pas d auth; applique uniquement le scope tenant"
+        )
+        ,
+        PackageIndexEntry(
+            "test",
+            "vitte/test",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Modeles et helpers de tests automatises",
+            "N execute pas le runner externe"
+        )
+        ,
+        PackageIndexEntry(
+            "timeout",
+            "vitte/timeout",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Coupe les appels lents avec budget explicite",
+            "Ne relance pas les appels; fournit uniquement la garde temporelle"
+        )
+        ,
+        PackageIndexEntry(
+            "tls",
+            "vitte/tls",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Session TLS, negotiation et securisation flux",
+            "Ne choisit pas la politique metier; expose seulement la surface technique"
+        )
+        ,
+        PackageIndexEntry(
+            "trace",
+            "vitte/trace",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Tracing distribue et correlation d appels",
+            "N exporte pas vers backend externe directement"
+        )
+        ,
+        PackageIndexEntry(
+            "typeck",
+            "vitte/typeck",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Verification de types et coherence des expressions",
+            "Ne fait ni IO reseau ni decisions metier applicatives"
+        )
+        ,
+        PackageIndexEntry(
+            "video",
+            "vitte/video",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Primitives video, timeline et metadata frame",
+            "Pas de codec materiel ou I/O streaming direct"
+        )
+        ,
+        PackageIndexEntry(
+            "ws",
+            "vitte/ws",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Canal WebSocket client serveur et evenements",
+            "Ne choisit pas la politique metier; expose seulement la surface technique"
+        )
+        ,
+        PackageIndexEntry(
+            "yaml",
+            "vitte/yaml",
+            [
+                "core=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core",
+                "mem=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/alloc",
+                "text=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/rope",
+                "result=https://github.com/vitte-lang/vitte/tree/main/src/vitte/packages/core"
+            ],
+            "Lecture ecriture YAML avec validation simple",
+            "Ne remplace pas les autres couches; respecte la separation de roles"
+        )
+    ]
+}
+
+proc package_tags() -> [string] {
+    let rows = package_index()
+    let out: [string] = []
+    let i: int = 0
+    loop {
+        if i >= rows.len { break }
+        out = out.push(rows[i].tag)
+        i = i + 1
+    }
+    give out
+}
